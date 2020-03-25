@@ -35,10 +35,14 @@
     // Create a component named "Header"
     // Have it return a header with an ID of "main"
     // Include h1El and pEl inside of the header element
+
+    // NOTE: Rendering a comma separated list of child elements or an array appears to
+    // produce the same results.
     const Header = React.createElement(
       'header',
       { id: 'main' },
-      [ h1LinkEl, pEl ],
+      h1LinkEl, pEl,
+      // [ h1LinkEl, pEl ],
     );
 
     // Practice #4
