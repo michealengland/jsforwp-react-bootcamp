@@ -37,7 +37,7 @@
     // Include h1El and pEl inside of the header element
 
     // NOTE: Rendering a comma separated list of child elements or an array appears to
-    // produce the same results.
+    // produce the same results. Using an array does trigger a console error about keys.s
     const Header = React.createElement(
       'header',
       { id: 'main' },
@@ -52,7 +52,28 @@
     // The first list item should be a link to the "React Docs" "https://reactjs.org/docs"
     // The second list item should be a link to the "ReactDOM Docs" overview "https://reactjs.org/docs/react-dom.html"
     // The third should be a link to a React related resource of your choice
-
+    const List = React.createElement(
+      'ul',
+      {
+        id: 'top',
+        className: 'react-links',
+      },
+      React.createElement(
+        'li',
+        {},
+        React.createElement('a', { href: 'https://reactjs.org/' }, 'React')
+      ),
+      React.createElement(
+        'li',
+        {},
+        React.createElement('a', { href: 'https://reactjs.org/docs/react-api.html#creating-react-elements' }, 'Creating React Elements')
+      ),
+      React.createElement(
+        'li',
+        {},
+        React.createElement('a', { href: 'https://reactjs.org/docs/react-api.html#createelement' }, 'createElement()')
+      )
+    );
 
     // Practice #5
     // Create a component named "App"
@@ -64,7 +85,8 @@
       // Place your element variable or component function call here to test
       // pEl,
       // h1LinkEl,
-      Header,
+      // Header,
+      List,
       document.getElementById('root')
     );
 
