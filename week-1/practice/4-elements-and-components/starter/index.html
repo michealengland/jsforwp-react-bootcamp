@@ -38,7 +38,7 @@
 
     // NOTE: Rendering a comma separated list of child elements or an array appears to
     // produce the same results. Using an array does trigger a console error about keys.s
-    const Header = React.createElement(
+    const Header = () => React.createElement(
       'header',
       { id: 'main' },
       h1LinkEl, pEl,
@@ -52,7 +52,7 @@
     // The first list item should be a link to the "React Docs" "https://reactjs.org/docs"
     // The second list item should be a link to the "ReactDOM Docs" overview "https://reactjs.org/docs/react-dom.html"
     // The third should be a link to a React related resource of your choice
-    const List = React.createElement(
+    const List = () => React.createElement(
       'ul',
       {
         id: 'top',
@@ -81,8 +81,8 @@
     const App = React.createElement(
       React.Fragment,
       {},
-      Header,
-      List
+      Header(),
+      List()
     );
 
 
