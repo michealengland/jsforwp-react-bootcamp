@@ -35,7 +35,11 @@
     // Create a component named "Header"
     // Have it return a header with an ID of "main"
     // Include h1El and pEl inside of the header element
-
+    const Header = React.createElement(
+      'header',
+      { id: 'main' },
+      [ h1LinkEl, pEl ],
+    );
 
     // Practice #4
     // Create a component named "List"
@@ -55,7 +59,8 @@
     ReactDOM.render(
       // Place your element variable or component function call here to test
       // pEl,
-      h1LinkEl,
+      // h1LinkEl,
+      Header,
       document.getElementById('root')
     );
 
