@@ -43,7 +43,13 @@
     // The second list item should be a link to the "ReactDOM Docs" overview "https://reactjs.org/docs/react-dom.html"
     // The third should be a link to a React related resource of your choice
     // Make sure to include a key for each list item
-
+    const List = () => (
+      <ul className="react-links">
+        <li><a href="https://reactjs.org/docs">React Docs</a></li>
+        <li><a href="https://reactjs.org/docs/react-dom.html">ReactDOM Docs</a></li>
+        <li><a href="https://reactjs.org/docs/glossary.html">React Glossary</a></li>
+      </ul>
+    );
 
     // Practice #5
     // Create a component named "App"
@@ -56,7 +62,8 @@
       // Place your element or component here to test
       // pEl,
       // h1LinkEl,
-      <Header />,
+      // <Header />,
+      <List />,
       document.getElementById('root')
     );
 
