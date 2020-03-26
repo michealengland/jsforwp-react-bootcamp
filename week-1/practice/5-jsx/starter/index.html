@@ -30,8 +30,8 @@
     // Include h1LinkEl and pEl inside of the header element
     const Header = () => (
       <header id="main">
-        { pEl }
         { h1LinkEl }
+        { pEl }
       </header>
     );
 
@@ -55,15 +55,20 @@
     // Create a component named "App"
     // Have it return a Fragment with the Header and List components inside of it
     // NOTE: The <> shorthand will not work with this demo, use <React.Fragment> for now
-
-
+    const App = () => (
+      <React.Fragment>
+        <Header />
+        <List />
+      </React.Fragment>
+    );
 
     ReactDOM.render(
       // Place your element or component here to test
       // pEl,
       // h1LinkEl,
       // <Header />,
-      <List />,
+      // <List />,
+      <App />,
       document.getElementById('root')
     );
 
