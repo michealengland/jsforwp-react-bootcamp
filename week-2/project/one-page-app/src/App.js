@@ -38,7 +38,7 @@ const Footer = () => (
   <footer>
     <i>simple one page website with a static header, footer and main content area</i>
     <p>
-      <strong>{siteTitle} | 3-3-2020</strong>
+      <strong>{siteTitle} | 4-2-2020</strong>
     </p>
   </footer>
 );
