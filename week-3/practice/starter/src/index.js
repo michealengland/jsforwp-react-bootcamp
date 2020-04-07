@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-// import Practice1 from "./Practice1";
+import Practice1 from "./Practice1";
 // import Practice2 from "./Practice2";
 // import Practice3 from "./Practice3";
 // import Practice4 from "./Practice4";
@@ -10,7 +10,7 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  "Call Practice Component Here",
+  <Practice1 />,
   document.getElementById("root")
 );
 

@@ -5,10 +5,13 @@ const Practice1 = () => {
   const username = "zgordon";
   return (
     <div className="practice">
-      {/* 
-        1.Pass the id and username into <User /> as props 
+      {/*
+        1.Pass the id and username into <User /> as props
       */}
-      <User />
+      <User
+        id={ id }
+        username={ username }
+      />
     </div>
   );
 };
