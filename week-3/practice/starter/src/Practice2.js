@@ -28,15 +28,7 @@ const Practice2 = () => {
   5. Have Post component rendr the post title and ID to the page
 */
 const Post = ({ id, title }) => {
-  console.log( id, title );
-
-  return (
-    <>
-      <h1>{ title }</h1>
-      <p>post id:{ id }</p>
-    </>
-   );
-  // return <p>Render post title and id here</p>;
+  return <p>Render post title:"{ title }" and id:"{ id }" here</p>;
 };
 
 export default Practice2;
