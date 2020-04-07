@@ -16,8 +16,7 @@ const Practice2 = () => {
         3. Pass in the post object as a prop
       */}
       <Post
-        id={ post.id }
-        title={ post.title }
+        post={ post }
       />
     </div>
   );
@@ -27,8 +26,8 @@ const Practice2 = () => {
   4. Make the Post component accept props
   5. Have Post component rendr the post title and ID to the page
 */
-const Post = ({ id, title }) => {
-  return <p>Render post title:"{ title }" and id:"{ id }" here</p>;
+const Post = (props) => {
+  return <p>{props.post.title} [{props.post.id}]</p>;
 };
 
 export default Practice2;
