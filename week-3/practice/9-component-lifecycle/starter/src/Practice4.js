@@ -6,14 +6,21 @@ class Practice4 extends React.Component {
     points: 0
   };
 
-  /* 
+  /*
     1. Call componentDidUpdate(prevProps, prevState) {}
     2. Log out the prev state of points
     3. Log out the current state of points
-    4. Write a conditional statement to check if 
+    4. Write a conditional statement to check if
        prevState.points !== this.state.points
     5. If that passes, then log out "State Changed!"
   */
+ componentDidUpdate(prevProps, prevState) {
+   console.log( { prevProps, prevState } );
+
+    if ( prevState.points !== this.state.points ) {
+      console.log('State Change!');
+    }
+ }
 
   addPoint = () => {
     this.setState({ points: this.state.points + 1 });
@@ -47,15 +54,21 @@ class BarChart extends React.Component {
     }
   }
 
-  /* 
+  /*
     6. Call componentDidUpdate(prevProps, prevState) {}
     7. Log out the prev props of points
     8. Log out the current props of points
-    9. Write a conditional statement to check if 
+    9. Write a conditional statement to check if
        prevProps.points !== this.props.points
     10. If that passes, then log out "Props Changed!"
   */
+  componentDidUpdate(prevProps, prevState) {
+    console.log( { prevProps, prevState } );
 
+    if ( prevProps.points !== this.props.points) {
+      console.log('Props Changed!');
+    }
+  }
   render() {
     const barStyles = {
       height: "200px",
