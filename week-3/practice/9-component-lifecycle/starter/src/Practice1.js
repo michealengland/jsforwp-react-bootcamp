@@ -6,12 +6,24 @@ class Header extends React.Component {
   state = {
     username: "defaultusername"
   };
-  /* 
+  /*
     1. Call static getDerivedStateFromProps(props, state) {}
     2. Inside of that log out the props and state
     3. Then create a newState object where you override the current username
     4. Return the newState
   */
+  static getDerivedStateFromProps(props, state) {
+    console.log( { props, state } );
+
+    // Overrides `username` state
+    const newState = {
+      username: 'mikeengland'
+    }
+
+    // Returns new state value to the React Dom?
+    return newState;
+  }
+
   render() {
     return (
       <header>
