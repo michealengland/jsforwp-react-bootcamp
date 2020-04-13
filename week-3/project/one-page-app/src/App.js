@@ -1,55 +1,63 @@
 import React from 'react';
 import './App.css';
 
-// Static Values
-const siteTitle = "Week 2 Project";
-
 // Site Header
-const Header = () => (
+const Header = ( { siteTitle, siteURL } ) => (
   <header>
     <h1>
-      <a href="http://react.com">{siteTitle}</a>
+      <a href={ siteURL }>{ siteTitle }</a>
     </h1>
   </header>
 );
 
-const requirementContent = [
-  "Static Header",
-  "Main Content Area",
-  "Static Footer"
-];
+// List of requirements.
+const RequirementsList = ( { listItems } ) => {
+  const listElements = listItems.map((x, id) => <li key={id}>{x}</li>);
 
-const RequirementsList = () => {
-  const listElements = requirementContent.map((x, id) => <li key={id}>{x}</li>);
-
-  return <ul>{listElements}</ul>;
+  return <ul>{ listElements }</ul>;
 };
 
 // Site Content Area
-const Main = () => (
+const Main = ( { content } ) => (
   <main>
-    <p>This is my content area.</p>
-    <RequirementsList />
+    <p>{ content }</p>
+    <RequirementsList
+      listItems={ [
+        "Replace hard coded data with props",
+        "Add an example of state"
+      ] }
+    />
   </main>
 );
 
 // Site Footer Area
-const Footer = () => (
+const Footer = ( { footerText, projectDate, siteTitle } ) => (
   <footer>
-    <i>simple one page website with a static header, footer and main content area</i>
+    <i>{ footerText }</i>
     <p>
-      <strong>{siteTitle} | 4-2-2020</strong>
+      <strong>{siteTitle} | { projectDate }</strong>
     </p>
   </footer>
 );
 
 function App() {
+  const siteTitle = "Week 3 Project";
+
   return (
     <div className="App">
       <React.Fragment>
-        <Header />
-        <Main />
-        <Footer />
+        <Header
+          siteURL="#"
+          siteTitle={ siteTitle }
+        />
+        <Main
+          content="This is my content area."
+        />
+        <Footer
+          footerText="simple one page website with a static header, footer and main content area"
+          projectDate="4-12-20"
+          siteTitle={ siteTitle }
+        />
       </React.Fragment>
     </div>
   );
