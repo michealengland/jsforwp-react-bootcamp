@@ -1,5 +1,5 @@
 # Practice Goals
-Complete the practice exercises from 10-15
+Complete the practice exercises from 10-15.
 
 # Project Goals
-Make a simple one page app that pulls in articles from a WordPress website and displays the articles when you click on a link title. Use props, state and the React lifecycle.
+Extend your simple one page site to include state at some level and the passing of data through props. An example would be a login button that can be clicked to change data or presentation of content on the page.
