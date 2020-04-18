@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Button from './components/Button';
 
 // Site Header
 const Header = ( { siteTitle, siteURL } ) => (
@@ -20,6 +21,9 @@ const RequirementsList = ( { listItems } ) => {
 // Site Content Area
 const Main = ( { content } ) => (
   <main>
+    <Button
+      label="Toggle Color Theme"
+    />
     <p>{ content }</p>
     <RequirementsList
       listItems={ [
