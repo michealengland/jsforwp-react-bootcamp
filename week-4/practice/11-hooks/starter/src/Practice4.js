@@ -23,16 +23,30 @@ const Practice4 = () => {
     fetchTheKitties();
   }, []);
 
-  const timer = setTimeout(() => {
-    fetchTheKitties();
-  }, 5000);
-
   // Update the Kittes based on interval.
   useEffect(() => {
-    return () => {
-      console.log( 'timer executed' );
-      return clearTimeout(timer);
-    };
+    // // Example using setTimeout
+    // const timer = setTimeout(() => {
+    //   fetchTheKitties();
+    // }, 5000);
+
+    // return () => clearTimeout(timer);
+
+    // Example using setInterval
+    const timer = setInterval(() => {
+      fetchTheKitties();
+    }, 5000);
+
+    return () => clearInterval(timer);
+
+    // // WARNING!!! This example causes an infinite loop.
+    // // This bug is caused by the clearInterval() function
+    // // being returned but not executed.
+    // const timer2 = setInterval(() => {
+    //   fetchTheKitties();
+    // }, 5000);
+
+    // return clearInterval( timer2 );
   });
 
   return (
