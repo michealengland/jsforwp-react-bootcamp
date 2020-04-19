@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Practice3 = () => {
   /*
@@ -8,10 +8,34 @@ const Practice3 = () => {
    * 4. Pass an empty array of dependencies to useEffect so it only fetches on initial page load
    */
 
+  const [catImg, setCatImg] = useState('');
+
+  // URL to fetch from.
+  const url = `https://aws.random.cat/meow`;
+
+  // Fetch the kitties.
+  const fetchTheKitties = () => {
+    fetch( url )
+      // Return a reponse object.
+      .then( response => response.json() )
+      // Run setCatImg with new response object.
+      .then( catImg => {
+        console.log( 'catImg:', catImg );
+        setCatImg( catImg.file );
+      } )
+      // Throw Error if not found.
+      .catch( error => console.error( error ) );
+  };
+
+  // Get posts on initial render and if no posts exist
+  useEffect(() => {
+    fetchTheKitties();
+  }, []);
+
   return (
     <>
       <h1>Random Cat Photo</h1>
-      <img src="" alt="Random Cat Image" width="500" />
+      <img src={ catImg } alt="Random Cat" width="500" />
     </>
   );
 };
