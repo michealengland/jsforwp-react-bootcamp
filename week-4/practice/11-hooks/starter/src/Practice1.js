@@ -9,7 +9,9 @@ const Practice1 = () => {
    */
   const [count, setCount] = useState(0);
 
-  const increaseCount = () => setCount( count + 1 );
+  const increaseCount = () => {
+    setCount( count + 1 );
+  };
 
   return (
     <>

@@ -13,14 +13,19 @@ const Practice2 = () => {
   const [awayPoints, setAwayPoints] = useState( 0 );
 
   // Increment each score by one.
-  const incrementHomePoints = () => setHomePoints( homePoints + 1 );
-  const incrementAwayPoints = () => setAwayPoints( awayPoints + 1 );
+  const incrementHomePoints = () => {
+    setHomePoints( homePoints + 1 )
+  };
+
+  const incrementAwayPoints = () => {
+    setAwayPoints( awayPoints + 1 )
+  };
 
   // Set both scores to zero.
-  const resetScore = () => (
-    setHomePoints( 0 ),
-    setAwayPoints( 0 )
-  );
+  const resetScore = () => {
+    setHomePoints( 0 );
+    setAwayPoints( 0 );
+  };
 
   return (
     <>
