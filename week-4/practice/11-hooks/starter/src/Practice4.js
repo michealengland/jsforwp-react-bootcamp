@@ -10,17 +10,35 @@ const Practice4 = () => {
 
   const [catImg, setCatImg] = useState(``);
 
+  // Fetch the kitties.
+  const fetchTheKitties = () => {
+    fetch( `https://aws.random.cat/meow` )
+      .then( response => response.json() )
+      .then( catImg => setCatImg( catImg.file ) )
+      .catch( error => console.error( error ) );
+  };
+
+  // Get Initial Kitties.
   useEffect(() => {
-    fetch(`https://aws.random.cat/meow`)
-      .then(response => response.json())
-      .then(data => setCatImg(data.file))
-      .catch(error => console.error(error));
+    fetchTheKitties();
   }, []);
+
+  const timer = setTimeout(() => {
+    fetchTheKitties();
+  }, 5000);
+
+  // Update the Kittes based on interval.
+  useEffect(() => {
+    return () => {
+      console.log( 'timer executed' );
+      return clearTimeout(timer);
+    };
+  });
 
   return (
     <>
       <h1>Random Cat Photo</h1>
-      <img src={catImg} alt="Random Cat Image" width="500" />
+      <img src={ catImg } alt="Random Cat Image" width="500" />
     </>
   );
 };
