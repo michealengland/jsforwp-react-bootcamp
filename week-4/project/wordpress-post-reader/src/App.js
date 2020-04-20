@@ -46,14 +46,31 @@ const Posts = () => {
 }
 
 // Individual Post View.
-const Post = ( { author, date, excerpt, id, link, title } ) => (
-  <article id={ `post-id-${ id }` }>
-    <h2><a href={ link }>{ title }</a></h2>
-    <span>{ author }</span><br />
-    <span>{ date }</span>
-    <p>{ excerpt }</p>
-  </article>
-);
+const Post = ( { author, date, excerpt, id, link, title } ) => {
+  const [displayContent, setDisplayContent] = useState( false );
+
+  // Control content toggle.
+  const togglePostContent = () => {
+    if ( displayContent === false ) {
+      setDisplayContent( true )
+    } else {
+      setDisplayContent( false)
+    }
+  };
+
+  // Post content to display.
+  const postContent = displayContent ? <p>{ excerpt }</p> : '';
+
+  return (
+    <article id={ `post-id-${ id }` }>
+      <h2><a href={ link }>{ title }</a></h2>
+      <span>{ author }</span><br />
+      <span>{ date }</span>
+      { postContent }
+      <button onClick={ togglePostContent } aria-expanded={ displayContent }>Expand Content</button>
+    </article>
+  );
+};
 
 function App() {
   return (
