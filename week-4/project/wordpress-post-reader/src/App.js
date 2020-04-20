@@ -60,6 +60,7 @@ const Post = ( { author, date, excerpt, id, link, title } ) => {
 
   // Post content to display.
   const postContent = displayContent ? <p>{ excerpt }</p> : '';
+  const buttonLabel = displayContent ? 'Collapse Content' : 'Expand Content';
 
   return (
     <article id={ `post-id-${ id }` }>
@@ -67,7 +68,7 @@ const Post = ( { author, date, excerpt, id, link, title } ) => {
       <span>{ author }</span><br />
       <span>{ date }</span><br />
       { postContent }
-      <button onClick={ togglePostContent } aria-expanded={ displayContent }>Expand Content</button>
+      <button onClick={ togglePostContent } aria-expanded={ displayContent }>{ buttonLabel }</button>
     </article>
   );
 };
