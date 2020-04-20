@@ -64,12 +64,13 @@ const Post = ( { author, date, excerpt, id, link, title } ) => {
   // Post content to display.
   const postContent = displayContent ? <div dangerouslySetInnerHTML={ createMarkup( excerpt ) } /> : '';
   const buttonLabel = displayContent ? 'Collapse Content' : 'Expand Content';
+  const dateTime = Date( date );
 
   return (
     <article id={ `post-id-${ id }` }>
       <h2><a href={ link }>{ title }</a></h2>
       <span>{ author }</span><br />
-      <span>{ date }</span><br />
+      <span>{ dateTime }</span><br />
       { postContent }
       <button onClick={ togglePostContent } aria-expanded={ displayContent }>{ buttonLabel }</button>
     </article>
