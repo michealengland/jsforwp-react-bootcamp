@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+// Function for Dangerously Set HTML.
+const createMarkup = ( content ) => ( { __html: content } );
+
 const Posts = () => {
 
   // Set initial state on posts.
@@ -59,7 +62,7 @@ const Post = ( { author, date, excerpt, id, link, title } ) => {
   };
 
   // Post content to display.
-  const postContent = displayContent ? <p>{ excerpt }</p> : '';
+  const postContent = displayContent ? <div dangerouslySetInnerHTML={ createMarkup( excerpt ) } /> : '';
   const buttonLabel = displayContent ? 'Collapse Content' : 'Expand Content';
 
   return (
