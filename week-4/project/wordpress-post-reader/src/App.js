@@ -65,7 +65,7 @@ const Post = ( { author, date, excerpt, id, link, title } ) => {
     <article id={ `post-id-${ id }` }>
       <h2><a href={ link }>{ title }</a></h2>
       <span>{ author }</span><br />
-      <span>{ date }</span>
+      <span>{ date }</span><br />
       { postContent }
       <button onClick={ togglePostContent } aria-expanded={ displayContent }>Expand Content</button>
     </article>
