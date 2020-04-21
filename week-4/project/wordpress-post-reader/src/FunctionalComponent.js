@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-// Function for Dangerously Set HTML.
-const createMarkup = ( content ) => ( { __html: content } );
+import createMarkup from './utility/HandleDangerousContent';
 
 const Posts = () => {
 

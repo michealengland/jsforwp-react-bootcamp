@@ -1,7 +1,5 @@
 import React from 'react';
-
-// Function for Dangerously Set HTML.
-const createMarkup = ( content ) => ( { __html: content } );
+import createMarkup from './utility/HandleDangerousContent';
 
 class Posts2 extends React.Component {
 	constructor( props ) {
