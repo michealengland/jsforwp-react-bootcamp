@@ -1,10 +1,12 @@
 import React from 'react';
 import FunctionalPosts from './FunctionalComponent';
+import ClassPosts from './ClassComponent';
 
 function App() {
   return (
     <div className="App">
-      <FunctionalPosts />
+      {/* <FunctionalPosts /> */}
+      <ClassPosts />
     </div>
   );
 }
